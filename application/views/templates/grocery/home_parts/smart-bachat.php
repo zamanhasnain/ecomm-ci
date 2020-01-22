@@ -4,7 +4,7 @@
 		<div class="card bg-warning px-4 mb-3 py-4">
 			<div class="product-card-two">
 				<div>
-					<img class="img-fluid pl-4" src="images/logo11.png">
+					<img class="img-fluid pl-4" src="<?=base_url('template/imgs/logo11.png')?>">
 					<div class="d-flex justify-content-center">
 						<h5 class="text-danger font-weight-bold">Start shopping at<br>lowest price!!!</h5></div>
 						<div class="d-flex justify-content-center"><button type="button" class="btn bg-light btn-rounded  text-danger px-4" style="
@@ -13,7 +13,7 @@
 					<div>
 						<div class="card">
 							<span class="badge badge-danger ml-2 mt-2 px-2 font-weight-bold w-25">50% OFF</span>
-							<img class="img-fluid mx-auto d-block" src="images/item1.png">
+							<img class="img-fluid mx-auto d-block" src="<?=base_url('template/imgs/item1.png')?>">
 							<div class="card-body">								
 								<p class="card-text text-muted">Quick sample text to create the card </p>
 								<p class="card-text text-muted">pack of 6 </p>
@@ -35,7 +35,7 @@
 					<div>
 						<div class="card">
 							<span class="badge badge-danger ml-2 mt-2 px-2 font-weight-bold w-25">50% OFF</span>
-							<img class="img-fluid mx-auto d-block" src="images/item1.png">
+							<img class="img-fluid mx-auto d-block" src="<?=base_url('template/imgs/item1.png')?>">
 							<div class="card-body">								
 								<p class="card-text text-muted">Quick sample text to create the card </p>
 								<p class="card-text text-muted">pack of 6 </p>
@@ -57,7 +57,7 @@
 					<div>
 						<div class="card">
 							<span class="badge badge-danger ml-2 mt-2 px-2 font-weight-bold w-25">50% OFF</span>
-							<img class="img-fluid mx-auto d-block" src="images/item1.png">
+							<img class="img-fluid mx-auto d-block" src="<?=base_url('template/imgs/item1.png')?>">
 							<div class="card-body">								
 								<p class="card-text text-muted">Quick sample text to create the card </p>
 								<p class="card-text text-muted">pack of 6 </p>
@@ -79,7 +79,7 @@
 					<div>
 						<div class="card">
 							<span class="badge badge-danger ml-2 mt-2 px-2 font-weight-bold w-25">50% OFF</span>
-							<img class="img-fluid mx-auto d-block" src="images/item1.png">
+							<img class="img-fluid mx-auto d-block" src="<?=base_url('template/imgs/item1.png')?>">
 							<div class="card-body">								
 								<p class="card-text text-muted">Quick sample text to create the card </p>
 								<p class="card-text text-muted">pack of 6 </p>
@@ -101,7 +101,7 @@
 					<div>
 						<div class="card">
 							<span class="badge badge-danger ml-2 mt-2 px-2 font-weight-bold w-25">50% OFF</span>
-							<img class="img-fluid mx-auto d-block" src="images/item1.png">
+							<img class="img-fluid mx-auto d-block" src="<?=base_url('template/imgs/item1.png')?>">
 							<div class="card-body">								
 								<p class="card-text text-muted">Quick sample text to create the card </p>
 								<p class="card-text text-muted">pack of 6 </p>
@@ -123,7 +123,7 @@
 					<div>
 						<div class="card">
 							<span class="badge badge-danger ml-2 mt-2 px-2 font-weight-bold w-25">50% OFF</span>
-							<img class="img-fluid mx-auto d-block" src="images/item1.png">
+							<img class="img-fluid mx-auto d-block" src="<?=base_url('template/imgs/item1.png')?>">
 							<div class="card-body">								
 								<p class="card-text text-muted">Quick sample text to create the card </p>
 								<p class="card-text text-muted">pack of 6 </p>

@@ -94,7 +94,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <a href="javascript:void(0);" data-id="<?= $product['id'] ?>" data-goto="<?= LANG_URL . '/checkout' ?>" class="add-to-cart btn-add">
                             <span class="text-to-bg"><?= lang('buy_now') ?></span>
                         </a>
-                        <a href="javascript:void(0);" data-id="<?= $product['id'] ?>" data-goto="<?= LANG_URL . '/shopping-cart' ?>" class="add-to-cart btn-add">
+                        <a href="javascript:void(0);" data-id="<?= $product['id'] ?>" class="add-to-cart btn-add">
                             <span class="text-to-bg"><?= lang('add_to_cart') ?></span>
                         </a>
                     <?php } else { ?>

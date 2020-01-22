@@ -1,11 +1,11 @@
 // Bootstrap Confirmation
-$('[data-toggle=confirmation]').confirmation({
+/*$('[data-toggle=confirmation]').confirmation({
     rootSelector: '[data-toggle=confirmation]',
     title: lang.are_you_sure,
     btnOkLabel: lang.yes,
     btnCancelLabel: lang.no
 });
-
+*/
 //Tootip activator
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()

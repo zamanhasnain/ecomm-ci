@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <link href="<?= base_url('templatecss/style-zaman.css') ?>" rel="stylesheet" />
 <nav class="navbar navbar-expand-md text-muted bg-white sub-menu-position" >
-    <div class="container">
+
+    <div class="container" id="view-product">
         <a href="#" class="navbar-brand text-dark"> <i class="fa fa-shopping-basket"></i> Super Store - Mandawali</a>
         <div class="navbar-collapse collapse justify-content-center order-2" id="collapsingNavbar">
             <ul class="navbar-nav">
@@ -60,10 +61,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="">
                     <div class="single-img-slider">
                         <div  <?= $product['folder'] != null ? : '' ?>>
-                           <img src="<?= base_url('/attachments/shop_images/' . $product['image']) ?>" class="img-fluid" alt=""></div>
+                         <img src="<?= base_url('/attachments/shop_images/' . $product['image']) ?>" class="img-fluid" alt=""></div>
 
-                           <?php
-                           if ($product['folder'] != null) {
+                         <?php
+                         if ($product['folder'] != null) {
                             $dir = "attachments/shop_images/" . $product['folder'] . '/';
                             ?>
 
@@ -129,102 +130,108 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="mt-3 mb-2">Available in:</div>
                     <button type="button" class="btn btn-outline-success disabled">1l</button>
                     <div>
-                        <button type="button" id="addTocartBtn" class="btn btn-outline-success btn-rounded  py-1 mt-3 mb-3" style="
-                        border-radius: 1.25rem;
-                        ">Add To Cart</button>
-                    </div>
-                </div>
-            </div>
-            <!-- second row start -->
-            <div class="row mt-3">
-                <div class="col-md-6"><div>
-                    <h4>Product Details</h4>
-                    <h6 class="text-muted">Key Features</h6>
-                    <p class="py-0 my-0">
-                        Made from the finest butter which is clarified under precisely controlled conditions
-                    </p>
-                    <p class="py-0 my-0">
-                        Rich in aroma and taste
-                    </p>
-                    <p>
-                        Its fine granular texture and distinct aroma imparts a great flavour to dishes
-                    </p>
-                </div>
-                <!-- hide and show section -->
-                <div class="accordion" id="accordion">
-                    <div class="">
-                        <div id="collapse" class="collapse" aria-labelledby="heading" data-parent="#accordion">
-                            <hr class="my-1">
-                            <p class="mb-0">Unit</p>
-                            <p class="text-muted mb-0">1l</p>
-                            <hr class="my-1">
-                            <p class="mb-0">Packaging Type</p>
-                            <p class="text-muted mb-0">Carton</p>
-                            <hr class="my-1">
-                            <p class="mb-0">Shelf Life</p>
-                            <p class="text-muted mb-0">12 month</p>
-                            <hr class="my-1">
-                            <p class="mb-0">Description</p>
-                            <p class="text-muted mb-0"><?= $product['description'] ?></p>
+                        <?php if ($product['quantity'] > 0) { ?>
 
+                            <a href="javascript:void(0);" data-id="<?= $product['id'] ?>" class="add-to-cart btn-add">
+                                <button type="button" id="addTocartBtn" class="btn btn-outline-success btn-rounded  py-1 mt-3 mb-3 add-to-cart btn-add" style="
+                                border-radius: 1.25rem;
+                                "> <span class="text-to-bg"><?= lang('add_to_cart') ?></span></button></a>
+                            <?php } else { ?>
+                                <div class="alert alert-info"><?= lang('out_of_stock_product') ?></div>
+                            <?php } ?>
                         </div>
-                        <div id="heading">
-                            <h2 class="mb-0 text-center">
-                                <button class="btn btn-link collapsed hidebtn" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="false" aria-controls="collapse">
-                                    See More
-                                </button>
-                            </h2>
-                        </div> 
                     </div>
                 </div>
-                <!-- hide and show section -->
-            </div>
-            <div class="col-md-6">
-                <h5>Why shop from our website?</h5>
-                <div class="mt-3">
-                    <i class="fa fa-tags"></i>
-                    <span class="font-weight-bold">Easy returns & refunds</span>
-                    <p class="ml-4" >Return products at doorstep and get refund in seconds.</p>
+                <!-- second row start -->
+                <div class="row mt-3">
+                    <div class="col-md-6"><div>
+                        <h4>Product Details</h4>
+                        <h6 class="text-muted">Key Features</h6>
+                        <p class="py-0 my-0">
+                            Made from the finest butter which is clarified under precisely controlled conditions
+                        </p>
+                        <p class="py-0 my-0">
+                            Rich in aroma and taste
+                        </p>
+                        <p>
+                            Its fine granular texture and distinct aroma imparts a great flavour to dishes
+                        </p>
+                    </div>
+                    <!-- hide and show section -->
+                    <div class="accordion" id="accordion">
+                        <div class="">
+                            <div id="collapse" class="collapse" aria-labelledby="heading" data-parent="#accordion">
+                                <hr class="my-1">
+                                <p class="mb-0">Unit</p>
+                                <p class="text-muted mb-0">1l</p>
+                                <hr class="my-1">
+                                <p class="mb-0">Packaging Type</p>
+                                <p class="text-muted mb-0">Carton</p>
+                                <hr class="my-1">
+                                <p class="mb-0">Shelf Life</p>
+                                <p class="text-muted mb-0">12 month</p>
+                                <hr class="my-1">
+                                <p class="mb-0">Description</p>
+                                <p class="text-muted mb-0"><?= $product['description'] ?></p>
+
+                            </div>
+                            <div id="heading">
+                                <h2 class="mb-0 text-center">
+                                    <button class="btn btn-link collapsed hidebtn" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="false" aria-controls="collapse">
+                                        See More
+                                    </button>
+                                </h2>
+                            </div> 
+                        </div>
+                    </div>
+                    <!-- hide and show section -->
                 </div>
-                <div>
-                    <i class="fa fa-tags"></i>
-                    <span class="font-weight-bold">Lowest price guaranteed</span>
-                    <p class="ml-4">Get difference refunded if you find it cheaper anywhere else.</p>
+                <div class="col-md-6">
+                    <h5>Why shop from our website?</h5>
+                    <div class="mt-3">
+                        <i class="fa fa-tags"></i>
+                        <span class="font-weight-bold">Easy returns & refunds</span>
+                        <p class="ml-4" >Return products at doorstep and get refund in seconds.</p>
+                    </div>
+                    <div>
+                        <i class="fa fa-tags"></i>
+                        <span class="font-weight-bold">Lowest price guaranteed</span>
+                        <p class="ml-4">Get difference refunded if you find it cheaper anywhere else.</p>
+                    </div>
                 </div>
             </div>
+            <!-- second row end -->
         </div>
-        <!-- second row end -->
-    </div>
-</section>
+    </section>
 
 
 
 
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.single-img-slider').slick({
-            dots: true,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            arrows:false
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.single-img-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows:false
+            });
         });
-    });
-</script>
+    </script>
 
-<script type="text/javascript">
-    $(function () {
-        $(".hidebtn").click(function () {
-            if($(".hidebtn").text()=="See More"){
-               $(".hidebtn").text("See Less -");
-           }
-           else {
-            $(".hidebtn").text("");
-        }
-    });
-    });       
-</script>
+    <script type="text/javascript">
+        $(function () {
+            $(".hidebtn").click(function () {
+                if($(".hidebtn").text()=="See More"){
+                 $(".hidebtn").text("See Less -");
+             }
+             else {
+                $(".hidebtn").text("");
+            }
+        });
+        });       
+    </script>
 

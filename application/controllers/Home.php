@@ -15,13 +15,6 @@ class Home extends MY_Controller
 
     public function index($page = 0)
     {
-        $this->load->view($this->template . 'home_parts/sliding-cat');
-        $this->load->view($this->template . 'home_parts/best-selling-items');
-        $this->load->view($this->template . 'home_parts/bank-and-promo');
-        $this->load->view($this->template . 'home_parts/smart-bahat');
-        $this->load->view($this->template . 'home_parts/buy-one-get-one');
-        $this->load->view($this->template . 'home_parts/topsaver');
-        $this->load->view($this->template . 'home_parts/card-cat');
         
         $data = array();
         $head = array();
@@ -31,6 +24,18 @@ class Home extends MY_Controller
         $head['keywords'] = str_replace(" ", ",", $head['title']);
         $all_categories = $this->Public_model->getShopCategories();
         $data['home_categories'] = $this->getHomeCategories($all_categories);
+
+
+        $data['sliding_cat']=$this->template . 'Home_parts/sliding-cat';
+        $data['best_selling_items']=$this->template . 'Home_parts/best-selling-items';
+        $data['smart_bachat']=$this->template . 'Home_parts/smart-bachat';
+        $data['Bank_offer']=$this->template . 'Home_parts/bank-and-promo';
+        $data['buy_one_get_one']=$this->template . 'Home_parts/buy-one-get-one';
+        $data['top_saver']=$this->template . 'Home_parts/topsaver';
+        $data['card_category']=$this->template . 'Home_parts/card-cat';
+
+
+
         $data['all_categories'] = $all_categories;
         $data['countQuantities'] = $this->Public_model->getCountQuantities();
         $data['bestSellers'] = $this->Public_model->getbestSellers();

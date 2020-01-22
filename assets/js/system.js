@@ -93,8 +93,8 @@ function checkDiscountCode() {
                     var final_amount = final_amount_before - obj.amount;
                     discountAmoun = obj.amount;
                 }
-                $('.final-amount').text(final_amount.toFixed(2));
-                $('.final-amount').val(final_amount.toFixed(2));
+                $('.final-amount').text(final_amount.toFixed(0));
+                $('.final-amount').val(final_amount.toFixed(0));
                 $('[name="discountAmount"]').val(discountAmoun);
                 is_discounted = true;
             }

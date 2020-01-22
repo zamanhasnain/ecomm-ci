@@ -211,7 +211,7 @@ if (count($sliderProducts) > 0) {
                 </script>
                 <?php
             }
-            ?>
+            ?> 
         </div>
     </div>
     <?php if ($links_pagination != '') { ?>
